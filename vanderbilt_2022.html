@@ -1,0 +1,1004 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Vanderbilt 2022</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<!--
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		-->
+			<link rel="stylesheet" href="css/theme/macalpine.css"> 
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+							<!--
+<section data-transition="fade" data-background-image="figures/maker.jpg" data-background-opacity="0.9">
+							-->
+<section data-transition="none">
+<h3>Replication initation, DNA repair, and nucleosome assembly through the lens of chromatin occupancy</h3>
+<div id="spacer" style="height: 45px;"></div>
+<p><a href="http://macalpine-lab.duhs.duke.edu">David MacAlpine, PhD</a></p>
+<small>
+<p>Department of Pharmacology and Cancer Biology</p>
+<p>Department of Biochemistry</p>
+<p>Duke University School of Medicine </p>
+</small>
+<div class="bottom"  style="position: absolute; top: 650px; width: 100%; text-align: center" >
+            <small>
+<p>Vanderbilt 2022</p>
+            </small>
+</div>
+</section>
+
+<section data-transition="none">
+					<h3>Chromatin and genome activity</h3>
+					<img src="figures/modencode_overview_alpha2.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="font-size: 80%; color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+<p><small>modENCODE et al., Science 2010</small></p>
+</div>
+	</section>
+
+<section data-transition="none">
+					<h3>How does the local chromatin enviroment regulate genomic activities?</h3>
+					<img src="figures/chromatin_regulation_schematic_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+	</section>
+
+	<section>
+					<h3>Jason's  footprint</h3>
+	<div id="left" style="width: 40%; margin: auto; padding: 10px; float:left" >
+<img  src="figures/jason.png" height=300 style="-webkit-box-reflect: below 3px -webkit-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-moz-box-reflect: below 3px -moz-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-o-box-reflect: below 3px -o-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-ms-box-reflect: below 3px -ms-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);">
+</div>
+<div id="right" style="margin-left: 40%; margin-top: 10%;padding: 10px" >
+	<!-- <img src="figures/preRCchromatin.png" width=400 	style="background: none; border: 0;box-shadow: 0 0 0px"> -->
+					<img src="figures/visualization_transparent.png" style="background: none; border: 0;box-shadow: 0 0 0px">
+</div>
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+	<p><small>Jason Belsky</small><p>
+</div>
+				</section>
+
+
+					<section data-transition="none">
+						<h3> MNase 'footprinting' the genome</h3>
+						<img src="figures/jab112_fig/encode_model_1_tp.png"
+						     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="font-size: 80%; color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+<p><small>Henikoff et al., PNAS 2011</small></p>
+</div>
+					</section>
+
+					<section data-transition="none">
+						<h3> MNase 'footprinting' the genome</h3>
+						<img src="figures/jab112_fig/encode_model_2_tp.png"
+						     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="font-size: 80%; color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+<p><small>Henikoff et al., PNAS 2011</small></p>
+</div>
+					</section>
+
+
+				<section data-transition="none">
+						<h3> MNase 'footprinting' the genome</h3>
+					<img src="figures/Mnase_digestion.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+					<section data-transition="none">
+						<img src="figures/jab112_fig/typhoon_plot_schematic_tp_2.png"
+						     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+					</section>
+
+					<section data-transition="none">
+						<img src="figures/jab112_fig/typhoon_plot_schematic_tp_3.png"
+						     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+					</section>
+
+					<!--
+				<section data-transition="none">
+						<h3> Chromatin occupancy at nucleotide resolution</h3>
+					<img src="figures/jab112_fig/erv46_expanded_typhoon_plot_tp_crop.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+						<h3> Chromatin occupancy at nucleotide resolution</h3>
+					<img src="figures/jab112_fig/erv46_typhoon_plot_tp2.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+					-->
+				<section data-transition="none">
+					<h3>Chromatin regulation of <i>CIK1</i></h3>
+					<img src="figures/jab112_fig/cik1_typhoon_plot_g2_tp.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+	<p><small>No mating pheromone </small><p>
+				</section>
+
+				<section data-transition="none">
+					<h3>Chromatin regulation of <i>CIK1</i></h3>
+					<img src="figures/jab112_fig/cik1_typhoon_plot_g1_tp.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+	<p><small>Mating pheromone </small><p>
+				</section>
+
+				<section data-transition="none">
+					<h3>ARS107 WT G2 </h3>
+					<img src="figures/jab112_fig/ars107_typhoon_plot_g2_tp.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>ARS107 <i>orc1-161</i> &nbsp G2 </h3>
+					<img src="figures/jab112_fig/ars107_typhoon_plot_g2_orc1_161_tp.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<!-- Insert rah --->
+
+<section data-transition="none">
+					<h3> Rachel's initiation</h3>
+	<div id="left" style="width: 40%; margin: auto; padding: 10px; float:left" >
+<img  src="figures/rh.jpg" style="-webkit-box-reflect: below 3px -webkit-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-moz-box-reflect: below 3px -moz-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-o-box-reflect: below 3px -o-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-ms-box-reflect: below 3px -ms-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);">
+</div>
+<div id="right" style="margin-left: 40%; margin-top: 5%;padding: 10px" >
+	<img src="figures/hoffman_model_tp.png" width=400 	style="background: none; border: 0;box-shadow: 0 0 0px">
+</div>
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+	<p><small>Rachel Hoffman</small><p>
+</div>
+				</section>
+
+
+
+<!--
+pre-RC assembly and intiation cell cycle
+assembly cell cycle and nucleosomes
+Question chromatin with initation?
+Delete primase
+Genetics
+Schematic
+FACS
+...aside no replication
+Chromatin early
+chromatin late
+histogram
+heat map disorganiztion
+why disorg model
+mcm/pol e /r
+model 
+helicase stalling GC
+model
+recovery FACS
+recovery DNA
+model
+-->
+
+
+<section data-transition="none">
+	<h3>Replication origin licensing</h3>
+	<img  src="figures/rah/origin_cell_cycle.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+
+<section data-transition="none">
+	<h3>Chromatin dyanmics at origins</h3>
+	<img  src="figures/rah/origin_chromatin.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Chromatin dynamics during initation</h3>
+	<img  src="figures/rah/origin_initiation.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Origin dynamics during initation without priming activity</h3>
+	<img  src="figures/rah/origin_initation_noprimase.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Conditional loss of cdc17 function by Anchor Away</h3>
+	<img  src="figures/rah/spot_plates_121421.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Experimental design</h3>
+	<img  src="figures/rah/exp_outline_1.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>S-phase is blocked  at the non-permissive condition in cdc17-ts-FRB</h3>
+					<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+<div class="container">
+
+<div class="col">
+				<div class="r-stack">
+  <img class="fragment fade-in-then-out" data-fragment-index="1" src="figures/rah/cdc17_24_defense_5_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="2" src="figures/rah/cdc17_24_defense_4_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="figures/rah/cdc17_24_defense_3_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="4" src="figures/rah/cdc17_24_defense_2_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="5" src="figures/rah/cdc17_24_defense_1_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+</div>
+</div>
+
+<div class="col">
+				<div class="r-stack">
+  <img class="fragment fade-in-then-out" data-fragment-index="1" src="figures/rah/cdc17_37_defense_5_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="2" src="figures/rah/cdc17_37_defense_4_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="figures/rah/cdc17_37_defense_3_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="4" src="figures/rah/cdc17_37_defense_2_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="5" src="figures/rah/cdc17_37_defense_1_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+								
+</div>
+</div>
+
+</div>
+				</section>
+
+<section data-transition="none">
+	<h3>Disrupted chromatin at an early activating origin</h3>
+	<img  src="figures/rah/ARS922_102821.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Chromatin at a late activating origin</h3>
+	<img  src="figures/rah/ARS405.5_102821.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Entropy as a measure of chromatin organization</h3>
+	<img  src="figures/rah/entropy_schematic.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Chromatin at early origins has increased entropy</h3>
+	<img  src="figures/rah/fig3_entropy_hist2.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Chromatin disruption at early origins</h3>
+	<img  src="figures/rah/subnuc_heatmap_cdc17_entropyorder_july2021.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Model for chromatin disruption</h3>
+	<img  src="figures/rah/model_for_disorder.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+
+<section data-transition="none">
+	<h3>Helicase uncoupling at early origins</h3>
+	<img  src="figures/rah/chip_heatmap_entropyorder_mcm_rfa1_polE_nonorm_mcmorder-3.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Why do the helicases stall?</h3>
+	<img  src="figures/rah/model_for_disorder.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Helicases stall at GC rich sequences</h3>
+	<img  src="figures/rah/aggregate_mcm_gc_239origins_bwa_nocopynum_nomcm_121421.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Helicases stall at GC rich sequences</h3>
+	<img  src="figures/rah/aggregate_mcm_gc_239origins_bwa_nocopynum_121421.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Helicases stall at GC rich sequences</h3>
+	<img  src="figures/rah/plot_gc_vs_mcm_ori_dist_cdc17_transparent.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>A functional replisome is required for helicase processivity</h3>
+	<img  src="figures/rah/gc_model.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Restoration of priming activity?</h3>
+	<img  src="figures/rah/full_model.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Experimental design</h3>
+	<img  src="figures/rah/exp_outline_2.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Returning cdc17-ts-FRB to the permissive coditions</h3>
+					<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+<div class="container">
+
+<div class="col">
+				<div class="r-stack">
+  <img class="fragment fade-in-then-out" data-fragment-index="1" src="figures/rah/cdc17_recovery_24_build5_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="2" src="figures/rah/cdc17_recovery_24_build4_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="figures/rah/cdc17_recovery_24_build3_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="4" src="figures/rah/cdc17_recovery_24_build2_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="5" src="figures/rah/cdc17_recovery_24_build1_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+</div>
+</div>
+
+<div class="col">
+				<div class="r-stack">
+  <img class="fragment fade-in-then-out" data-fragment-index="1" src="figures/rah/cdc17_recovery_37_24_build5_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="2" src="figures/rah/cdc17_recovery_37_24_build4_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="figures/rah/cdc17_recovery_37_24_build3_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="4" src="figures/rah/cdc17_recovery_37_24_build2_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+  <img class="fragment fade-in-then-out" data-fragment-index="5" src="figures/rah/cdc17_recovery_37_24_build1_transparent.png" width="300" style="background: none; border: 0; box-shadow: 0 0 0px"> 
+
+								
+</div>
+</div>
+
+</div>
+				</section>
+
+<section data-transition="none">
+	<h3>Stalled helicases are oriented to leave unreplicated gaps</h3>
+	<img  src="figures/rah/origin_gap.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+<section data-transition="none">
+	<h3>Helicase uncoupling results in unreplicated DNA at origins</h3>
+	<img  src="figures/rah/aggregate_early_dna_coverage_8kb_meannormalized_rep1_2_100bp_121421.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+</section>
+
+
+
+<section data-transition="none">
+					<h3>Summary</h3>
+	<img  src="figures/rah/full_model.png"
+			 class="stretch"
+			 style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="font-size: 80%; color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+  <p><small>Hoffman et al., Genes Dev, 2021 </small><p>
+</div>
+	</section>
+
+
+
+
+				<section data-transition="none">
+					<h3> Vinay's break</h3>
+	<div id="left" style="width: 40%; margin: auto; padding: 10px; float:left" >
+<img  src="figures/vt_headshot.jpg" style="-webkit-box-reflect: below 3px -webkit-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-moz-box-reflect: below 3px -moz-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-o-box-reflect: below 3px -o-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-ms-box-reflect: below 3px -ms-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);">
+</div>
+<div id="right" style="margin-left: 40%; margin-top: 5%;padding: 10px" >
+	<img  src="figures/encode_picture_tp_dsb_lightning.png" style="background: none; border: 0;box-shadow: 0 0 0px">
+</div>
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+	<p><small>Vinay Tripuraneni</small><p>
+</div>
+				</section>
+
+
+
+
+
+       <section data-transition="none">
+            <h3>DSB repair pathways</h3>
+            <img src="figures/mrx_hr_nhej.png"
+                 class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="font-size: 80%; color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+  <p><small>Oh and Symington, Genes 2018 </small><p>
+</div>
+          </section>
+
+
+       <section data-transition="none">
+            <h3> Broad nucleosome eviction surrounding a DSB</h3>
+            <img src="figures/osley_tp.png"
+                 class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="font-size: 80%; color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+  <p><small>Tsukuda et al., Nature 2005 </small><p>
+</div>
+          </section>
+				<section data-transition="none">
+								<h3>Introduction of a site-specific break at <em>PHO5</em></h3>
+					<img src="figures/vt_schematic_empty.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+								<h3>Introduction of a site-specific break at <em>PHO5</em></h3>
+					<img src="figures/vt_schematic_southern.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+				<section data-transition="none">
+								<h3>MRX-dependent broad eviction of nucleosomes</h3>
+					<img src="figures/mnase_accessibility.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+						<h3> Chromatin occupancy profiling</h3>
+					<img src="figures/mnase_schematic_vt_tp.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<!--
+
+				<section data-transition="none">
+						<h3> Chromatin occupancy profiling</h3>
+					<img src="figures/erv46_vt.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				-->
+
+				<section data-transition="none">
+						<h3>Chromatin changes at control loci</h3>
+					<img src="figures/control_loci_vt_2.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+								<h3>Chromatin flanking a DSB break at <em>PHO5</em></h3>
+					<img src="figures/pho5_chromatin_vt_1.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+								<h3>Chromatin flanking a DSB break at <em>PHO5</em></h3>
+					<img src="figures/pho5_chromatin_vt_2.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+								<h3>Chromatin flanking a DSB break at <em>PHO5</em></h3>
+					<img src="figures/pho5_chromatin_vt_3.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+								<h3>Histone eviction surrounding a break at <em>PHO5</em></h3>
+					<img src="figures/pho5_chromatin_wt_summary_0.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+								<h3>Histone eviction surrounding a break at <em>PHO5</em></h3>
+					<img src="figures/pho5_chromatin_wt_summary_1.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<!--
+				<section data-transition="none">
+								<h3>Histone eviction surrounding a break at <em>PHO5</em></h3>
+					<img src="figures/pho5_wt_ku_mre.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				-->
+
+				<section data-transition="none">
+						<h3>Histone eviction summary </h3>
+					<img src="figures/wt_pho5_nucleosome_pictograph_1.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+						<h3>Histone eviction summary </h3>
+					<img src="figures/wt_pho5_nucleosome_pictograph_2.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+								<h3>MRE11 facilitates eviction of the 1L nucleosome </h3>
+					<img src="figures/pho5_nucleosome_eviction_kinetics.svg"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				
+				<section data-transition="none">
+						<h3>Restoration of chromatin following NHEJ?</h3>
+					<img src="figures/NHEJ_model_southern_1.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+						<h3>Restoration of chromatin following NHEJ?</h3>
+					<img src="figures/NHEJ_model_southern_2.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+						<h3>Chromatin dynamics during NHEJ</h3>
+					<img src="figures/nhej_chromatin_new.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+						<h3>Chromatin dynamics during NHEJ</h3>
+					<img src="figures/nhej_gcop_summary_3_tp.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<section data-transition="none">
+						<h3>Replication independent restoration of chromatin following NHEJ</h3>
+					<img src="figures/nhej_final_model.png"
+					     class="stretch" style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Tripuraneni et al., Genome Res, 2021</small><p>
+</div>
+				</section>
+
+
+
+				<section data-transition="none">
+					<h3> Bonnie's assembly</h3>
+	<div id="left" style="width: 35%; margin: auto; padding: 10px; float:left" >
+<img  src="figures/boning_chen.jpg"  style="-webkit-box-reflect: below 3px -webkit-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-moz-box-reflect: below 3px -moz-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-o-box-reflect: below 3px -o-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
+-ms-box-reflect: below 3px -ms-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);">
+</div>
+<div id="right" style="margin-left: 35%; margin-top: 5%;padding: 10px" >
+	<img src="figures/assembly1.png" width=550 	style="background: none; border: 0;box-shadow: 0 0 0px">
+</div>
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: left" >
+	<p><small>Boning Chen 陈泊宁 </small><p>
+</div>
+				</section>
+<section data-transition="none">
+					<h3>Epigenetic inheritance</h3>
+					<img src="figures/epigenetic_transparent.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+	</section>
+
+				<section data-transition="none">
+					<h3>Nascent chromatin occupancy profiling</h3>
+					<img src="figures/schematic_1_transparent.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Gutierrez et al., Genome Res, 2019</small><p>
+</div>
+				</section>
+
+				<!--
+				<section data-transition="none">
+					<h3>Nascent chromatin occupancy profiling</h3>
+					<img src="figures/schematic_example_midpoint_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				-->
+
+
+				<section data-transition="none">
+					<h3>WT nucleosome assembly</h3>
+					<img src="figures/wt_assembly_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>Nascent chromatin rapidly matures</h3>
+					<img src="figures/wt_assembly_entropy_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>CAF-1 deposits nascent histone H3-H4 tetramers</h3>
+					<img src="figures/caf1_model_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Verreault et al, 1996; Yang et al, 2015</small><p>
+</div>
+				</section>
+
+				<section data-transition="none">
+								<h3>Loss of CAF-1 (<em><smalld>Δ</smalld>cac1</em>) phenotypes</h3>
+					<img src="figures/caf1_phenotypes_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Enomoto and Berman, 1997; Kaufman et al, 1996; Bakel et al, 2013</small><p>
+</div>
+
+				</section>
+
+				<section data-transition="none">
+								<h3><em><smalld>Δ</smalld>cac1</em> cells exhibit a defect in nucleosome spacing</h3>
+					<img src="figures/caf1_spacing_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Bakel et al, 2013</small><p>
+</div>
+				</section>
+
+				<section data-transition="none">
+								<h3>Loss of CAF-1 delays assembly</h3>
+					<img src="figures/wt_caf1_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+
+				<section data-transition="none">
+					<h3>Heterogenous deposition of nucleosomes</h3>
+					<img src="figures/wt_caf1_zoom_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>Heterogenous deposition of nucleosomes</h3>
+					<img src="figures/het_nuc_deposition.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+				<section data-transition="none">
+					<h3>Transcription replaces/resets slow nucleosomes</h3>
+					<img src="figures/het_nuc_txp_2.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>Cryptic transcription initiates at slow nucleosomes</h3>
+					<img src="figures/cryptic_caf1_1_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Bakel et al, 2013</small><p>
+</div>
+				</section>
+
+				<section data-transition="none">
+					<h3>Cryptic transcription initiates at slow nucleosomes</h3>
+					<img src="figures/cryptic_caf1_2_a.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+<div class="bottom" style="color: #3b759e ; position: absolute; top: 650px; width: 100%; text-align: right" >
+	<p><small>Bakel et al, 2013</small><p>
+</div>
+				</section>
+
+
+				<section data-transition="none">
+					<h3>Summary of <em><smalld>Δ</smalld>cac1</em> assembly defects </h3>
+					<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+
+<div class="container">
+
+<div class="col">
+					<ul>
+            <li class="fragment fade-in-then-semi-out" data-fragment-index="1">Heterogenous nucleosome deposition</li>
+            <li class="fragment fade-in-then-semi-out" data-fragment-index="2">Active transcription replaces/resets slow nucleosomes </li>
+            <li class="fragment fade-in-then-semi-out" data-fragment-index="3">Cryptic transcription initiates at slow nucleosomes</li>
+        </ul>
+</div>
+
+<div class="col">
+				<div class="r-stack">
+								
+  <img class="fragment fade-in-then-out" data-fragment-index="1" src="figures/caf1_model_1.png" width="300" 
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+  <img class="fragment fade-in-then-out"  data-fragment-index="2" src="figures/caf1_model_3.png" width="300"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="figures/caf1_model_2.png" width="300"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+</div>
+</div>
+
+</div>
+				</section>
+
+<section data-transition="linear" data-transition-speed="slow" data-background="figures/durham-1.jpg">
+<h3 style="color:  #DDEFF4">Acknowledgements</h3>
+	<center>
+				<table style="width: 1000px; color: #DDEFF4">
+				<small>
+					<thead>
+						<tr>
+						<th>MacAlpine Lab</th>
+						<th>Collaborators</th>
+					</tr>
+					</thead>
+
+					<tbody>
+					<tr>
+						<td>Bonnie Chen</td>
+						<td>Jim Haber (Brandeis)</td>
+					</tr>
+					<tr>
+						<td>Rachel Hoffman</td>
+						<td>Steve Bell (MIT) </td>
+					</tr>
+					<tr>
+						<td>Vinay Tripuraneni</td>
+						<td>Chris Counter (Duke)</td>
+					</tr>
+					<tr>
+						<td>Yulong Li</td>
+						<td>Alex Hartemink (Duke)</td>
+					</tr>
+					<tr>
+						<td>Kevin Moyung</td>
+						<td>Trung Tran (Hartemink)</td>
+					</tr>
+					<tr>
+						<td>Heather MacAlpine</td>
+						<td><strong>Funding</strong></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>NIH/NIGMS</td>
+					</tr>
+					</tbody>
+				</small>
+				</table>
+				</center>
+				</section>
+
+
+<section data-background-image="figures/Nucleosome_1KX5.png" data-background-size="contain" data-background-opacity="0.6">
+</section>
+
+				<section data-transition="none">
+					<h3>Small fragments in <em><smalld>Δ</smalld>cac1</em> may represent subnucleosome structures</h3>
+					<img  src="figures/structure_small_frags_1.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>Small fragments in <em><smalld>Δ</smalld>cac1</em> may represent subnucleosome structures</h3>
+					<img  src="figures/structure_small_frags_2.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>MNase cuts are centered around the nucleosome dyad</h3>
+					<img  src="figures/dyad_cuts_3.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>MNase cuts are centered around the nucleosome dyad</h3>
+					<img  src="figures/dyad_cuts_2.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>MNase cuts are centered around the nucleosome dyad</h3>
+					<img  src="figures/dyad_cuts_1.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>MNase cuts are centered around the nucleosome dyad</h3>
+					<img  src="figures/dyad_cuts_0.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mixed population of small fragments in <em><smalld>Δ</smalld>cac1</em> </h3>
+					<img  src="figures/cac1_small_fragments_1.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mixed population of small fragments in <em><smalld>Δ</smalld>cac1</em> </h3>
+					<img  src="figures/cac1_small_fragments_2.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>Small fragments in <em><smalld>Δ</smalld>cac1</em> may represent H3-H4 tetramers </h3>
+					<img  src="figures/cac1_small_dencolve_1.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>Small fragments in <em><smalld>Δ</smalld>cac1</em> may represent H3-H4 tetramers </h3>
+					<img  src="figures/cac1_small_dencolve_2.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+				<section data-transition="none">
+					<h3>Small fragments in <em><smalld>Δ</smalld>cac1</em> may represent H3-H4 tetramers </h3>
+					<img  src="figures/cac1_small_dencolve_3.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+
+				<section data-transition="none">
+					<h3>Summary</h3>
+					<img  src="figures/tetrasome_model_summary_1.png"
+					     class="stretch"
+					     style="background: none; border: 0; box-shadow: 0 0 0px">
+				</section>
+
+
+<section data-transition="linear" data-transition-speed="slow" data-background="figures/durham-1.jpg">
+<h3 style="color:  #DDEFF4">Acknowledgements</h3>
+	<center>
+				<table style="width: 1000px; color: #DDEFF4">
+				<small>
+					<thead>
+						<tr>
+						<th>MacAlpine Lab</th>
+						<th>Collaborators</th>
+					</tr>
+					</thead>
+
+					<tbody>
+					<tr>
+						<td>Bonnie Chen</td>
+						<td>Jim Haber (Brandeis)</td>
+					</tr>
+					<tr>
+						<td>Rachel Hoffman</td>
+						<td>Steve Bell (MIT) </td>
+					</tr>
+					<tr>
+						<td>Vinay Tripuraneni</td>
+						<td>Chris Counter (Duke)</td>
+					</tr>
+					<tr>
+						<td>Yulong Li</td>
+						<td>Alex Hartemink (Duke)</td>
+					</tr>
+					<tr>
+						<td>Kevin Moyung</td>
+						<td>Trung Tran (Hartemink)</td>
+					</tr>
+					<tr>
+						<td>Heather MacAlpine</td>
+						<td><strong>Funding</strong></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>NIH/NIGMS</td>
+					</tr>
+					</tbody>
+				</small>
+				</table>
+				</center>
+				</section>
+
+
+	
+
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		
+
+	</body>
+</html>
