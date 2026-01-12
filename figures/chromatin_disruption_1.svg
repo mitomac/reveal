@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Panel 1: Intact chromatin before replication -->
+
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" fill="#333" text-anchor="middle">Chromatin before replication</text>
+
+  <!-- DNA line -->
+  <line x1="50" y1="150" x2="750" y2="150" stroke="#222" stroke-width="3"/>
+
+  <!-- Nucleosome 1 -->
+  <g transform="translate(120, 150)">
+    <!-- H2A-H2B dimer ring -->
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7cb342" stroke-width="4"/>
+    <!-- H3/H4 tetramer -->
+    <circle cx="0" cy="0" r="20" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <!-- X pattern for parental -->
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#1976d2" stroke-width="2"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#1976d2" stroke-width="2"/>
+  </g>
+
+  <!-- Nucleosome 2 -->
+  <g transform="translate(220, 150)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7cb342" stroke-width="4"/>
+    <circle cx="0" cy="0" r="20" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#1976d2" stroke-width="2"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#1976d2" stroke-width="2"/>
+  </g>
+
+  <!-- Nucleosome 3 -->
+  <g transform="translate(320, 150)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7cb342" stroke-width="4"/>
+    <circle cx="0" cy="0" r="20" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#1976d2" stroke-width="2"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#1976d2" stroke-width="2"/>
+  </g>
+
+  <!-- Nucleosome 4 -->
+  <g transform="translate(420, 150)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7cb342" stroke-width="4"/>
+    <circle cx="0" cy="0" r="20" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#1976d2" stroke-width="2"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#1976d2" stroke-width="2"/>
+  </g>
+
+  <!-- Nucleosome 5 -->
+  <g transform="translate(520, 150)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7cb342" stroke-width="4"/>
+    <circle cx="0" cy="0" r="20" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#1976d2" stroke-width="2"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#1976d2" stroke-width="2"/>
+  </g>
+
+  <!-- Nucleosome 6 -->
+  <g transform="translate(620, 150)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7cb342" stroke-width="4"/>
+    <circle cx="0" cy="0" r="20" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#1976d2" stroke-width="2"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#1976d2" stroke-width="2"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(150, 250)">
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#7cb342" stroke-width="3"/>
+    <circle cx="0" cy="0" r="10" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <line x1="-5" y1="-5" x2="5" y2="5" stroke="#1976d2" stroke-width="2"/>
+    <line x1="5" y1="-5" x2="-5" y2="5" stroke="#1976d2" stroke-width="2"/>
+    <text x="30" y="5" font-family="Arial, sans-serif" font-size="14" fill="#333">Parental nucleosome (H3/H4 tetramer + H2A-H2B dimers)</text>
+  </g>
+</svg>

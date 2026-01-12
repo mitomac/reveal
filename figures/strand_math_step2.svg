@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="350" viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Step 2: Origin fires, replication bubble forms - clean oval -->
+
+  <!-- Watson strand labels -->
+  <text x="60" y="140" font-family="Arial, sans-serif" font-size="16" fill="#333">5'</text>
+  <text x="820" y="140" font-family="Arial, sans-serif" font-size="16" fill="#333">3'</text>
+  <text x="450" y="50" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Watson</text>
+
+  <!-- Crick strand labels -->
+  <text x="60" y="175" font-family="Arial, sans-serif" font-size="16" fill="#333">3'</text>
+  <text x="820" y="175" font-family="Arial, sans-serif" font-size="16" fill="#333">5'</text>
+  <text x="450" y="270" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Crick</text>
+
+  <!-- Parental DNA - left of bubble -->
+  <line x1="100" y1="135" x2="280" y2="135" stroke="#222" stroke-width="3"/>
+  <line x1="100" y1="170" x2="280" y2="170" stroke="#222" stroke-width="3"/>
+
+  <!-- Parental DNA - right of bubble -->
+  <line x1="620" y1="135" x2="800" y2="135" stroke="#222" stroke-width="3"/>
+  <line x1="620" y1="170" x2="800" y2="170" stroke="#222" stroke-width="3"/>
+
+  <!-- Replication bubble - oval/eye shape -->
+  <!-- Top arc (Watson) bulges UP -->
+  <path d="M 280 135 Q 450 70, 620 135" stroke="#222" stroke-width="3" fill="none"/>
+  <!-- Bottom arc (Crick) bulges DOWN -->
+  <path d="M 280 170 Q 450 235, 620 170" stroke="#222" stroke-width="3" fill="none"/>
+
+  <!-- Origin marker -->
+  <text x="450" y="160" font-family="Arial, sans-serif" font-size="14" fill="#d32f2f" text-anchor="middle" font-weight="bold">Origin</text>
+
+  <!-- Fork direction arrows -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d32f2f"/>
+    </marker>
+  </defs>
+
+  <!-- Left fork arrow -->
+  <line x1="350" y1="152" x2="295" y2="152" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrowred)"/>
+
+  <!-- Right fork arrow -->
+  <line x1="550" y1="152" x2="605" y2="152" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrowred)"/>
+
+  <!-- Label for bidirectional -->
+  <text x="450" y="320" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">Bidirectional replication from origin</text>
+
+</svg>
