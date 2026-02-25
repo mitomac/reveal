@@ -1,0 +1,731 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Lobster in the Room</title>
+
+		<meta name="description" content="The security model exists. We built it for humans.">
+		<meta name="author" content="David MacAlpine">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="css/theme/macalpine2.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			/* Talk-specific overrides */
+			.reveal {
+				font-family: "Open Sans", system-ui, sans-serif;
+			}
+			.reveal code, .reveal pre, .mono {
+				font-family: "Fira Mono", "Cascadia Code", "Consolas", monospace;
+			}
+			.reveal .title-lobster {
+				font-size: 4em;
+				margin-bottom: 0;
+			}
+			.reveal .title-main {
+				font-size: 1.6em;
+				font-weight: 700;
+				margin-top: 0.1em;
+				margin-bottom: 0.2em;
+			}
+			.reveal .title-sub {
+				color: #888;
+				font-size: 0.9em;
+				margin-top: 0;
+			}
+			.reveal .title-teaser {
+				font-family: "Fira Mono", "Cascadia Code", "Consolas", monospace;
+				font-size: 0.45em;
+				color: #aaa;
+				position: absolute;
+				bottom: 40px;
+				width: 100%;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-transition="none">
+	<div class="title-lobster">&#x1F99E;</div>
+	<div class="title-main">The Lobster in the Room</div>
+	<div class="title-sub">The security model exists. We built it for humans.</div>
+</section>
+
+<!-- Slide 2: Chat → Code → Claw -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', 'Cascadia Code', monospace;">Chat &rarr; Code &rarr; Claw</h3>
+	<div style="text-align: left; font-size: 0.6em; margin: 0 auto; max-width: 85%;">
+		<p><code>chat</code> &mdash; you talk to an AI</p>
+		<p><code>code</code> &mdash; the AI writes and executes code on your behalf</p>
+		<p><code>claw</code> &mdash; the AI operates autonomously: your accounts, your browser, your filesystem, your messaging platforms</p>
+	</div>
+	<img src="figures/starchart.svg" class="stretch" style="background: none; border: 0; box-shadow: none;">
+	<p style="font-size: 0.45em; color: #888; font-style: italic; margin-top: 0.1em;">OpenClaw: 225k stars in 3 months. Linux: 219k stars in 14 years.</p>
+</section>
+
+<!-- Slide 3: The Developer -->
+<section data-transition="none">
+	<div style="display: flex; align-items: center; justify-content: center; gap: 2em;">
+		<img src="figures/steipete.jpg" style="width: 250px; height: 250px; border-radius: 50%; border: 0; box-shadow: none;">
+		<div style="text-align: left; font-size: 0.55em; max-width: 55%;">
+			<h3 style="margin-bottom: 0.2em;">Peter Steinberger</h3>
+			<p style="color: #888; margin-top: 0; font-style: italic;">"Came back from retirement to mess with AI."</p>
+			<ul style="line-height: 1.6;">
+				<li>Built <strong>PSPDFKit</strong> &mdash; PDF SDK used by Apple, Dropbox, SAP</li>
+				<li>Bootstrapped it for a decade. Sold when Insight Partners put in $116M (2021)</li>
+				<li>Fumbled around on multiple projects. Then vibe-coded OpenClaw.</li>
+				<li>225k GitHub stars in 3 months</li>
+				<li>Meta offered <strong>$1B</strong>. He chose OpenAI.</li>
+				<li>Acqui-hired February 15, 2026. Price undisclosed.</li>
+				<li>OpenClaw remains open source &mdash; moved to independent foundation, OpenAI as financial sponsor. Think Mozilla, but probably more $$.</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Slide 4: The Cambrian Explosion -->
+<section data-transition="none">
+	<h3>The Cambrian Explosion</h3>
+	<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 90%; margin: 0 auto; font-size: 0.45em;">
+		<div style="text-align: center;">
+			<img src="figures/openclaw-logo-text.png" style="height: 70px; border: 0; box-shadow: none; background: #ddd; border-radius: 6px; padding: 4px;">
+			<p style="margin: 0.2em 0 0;"><strong>OpenClaw</strong><br>430k lines TypeScript</p>
+		</div>
+		<div style="text-align: center;">
+			<img src="figures/nanobot_logo.png" style="height: 70px; border: 0; box-shadow: none; background: none;">
+			<p style="margin: 0.2em 0 0;"><strong>NanoBot</strong><br>4k lines Python</p>
+		</div>
+		<div style="text-align: center;">
+			<img src="figures/picoclaw.jpg" style="height: 70px; border: 0; box-shadow: none; background: none;">
+			<p style="margin: 0.2em 0 0;"><strong>PicoClaw</strong><br>Go, runs on $10 hardware</p>
+		</div>
+		<div style="text-align: center;">
+			<p style="font-size: 2.5em; margin: 0; line-height: 70px;">&#x1F980;</p>
+			<p style="margin: 0.2em 0 0;"><strong>ZeroClaw</strong><br>Rust, 3.4MB binary</p>
+		</div>
+		<div style="text-align: center;">
+			<img src="figures/ironclaw.png" style="height: 70px; border: 0; box-shadow: none; background: none;">
+			<p style="margin: 0.2em 0 0;"><strong>IronClaw</strong><br>WASM-sandboxed tools</p>
+		</div>
+		<div style="text-align: center;">
+			<p style="font-size: 2.5em; margin: 0; line-height: 70px;">&#x1F41A;</p>
+			<p style="margin: 0.2em 0 0;"><strong>TinyClaw</strong><br>400 lines shell script</p>
+		</div>
+		<div style="text-align: center;">
+			<p style="font-size: 2.5em; margin: 0; line-height: 70px;">&#x2205;</p>
+			<p style="margin: 0.2em 0 0;"><strong>NullClaw</strong><br>Zig, 678KB binary</p>
+		</div>
+		<div style="text-align: center;">
+			<img src="figures/nanoclaw-logo.png" style="height: 70px; border: 0; box-shadow: none; background: none;">
+			<p style="margin: 0.2em 0 0;"><strong>NanoClaw</strong><br>Container-isolated</p>
+		</div>
+		<div style="text-align: center;">
+			<p style="font-size: 2.5em; margin: 0; line-height: 70px;">&#x1F982;</p>
+			<p style="margin: 0.2em 0 0;"><strong>Moltis</strong><br>Rust, production-focused</p>
+		</div>
+	</div>
+	<p style="font-size: 0.5em; color: #888; font-style: italic; margin-top: 0.5em;">"The Cambrian explosion happened in 2026."</p>
+</section>
+
+<!-- Slide 5: The Dumpster Fire -->
+<section data-transition="none">
+	<h3>&#x1F525; Meanwhile, in Security</h3>
+	<div style="font-size: 0.5em; text-align: left; max-width: 90%; margin: 0 auto;">
+		<div style="margin-bottom: 0.6em;">
+			<blockquote style="border-left: 3px solid #c0392b; padding-left: 0.8em; margin: 0.3em 0;">"Groundbreaking capability, absolute nightmare security."<br><span style="color: #888;">&mdash; Cisco AI Threat Research</span></blockquote>
+		</div>
+		<div style="margin-bottom: 0.6em;">
+			<blockquote style="border-left: 3px solid #c0392b; padding-left: 0.8em; margin: 0.3em 0;">"The attack happens inside the model's reasoning&hellip; no malware signature, no network anomaly, no unauthorized access."<br><span style="color: #888;">&mdash; VentureBeat</span></blockquote>
+		</div>
+		<div style="margin-bottom: 0.6em;">
+			<blockquote style="border-left: 3px solid #c0392b; padding-left: 0.8em; margin: 0.3em 0;">"Lethal trifecta."<br><span style="color: #888;">&mdash; Palo Alto Networks threat assessment</span></blockquote>
+		</div>
+	</div>
+	<div style="font-size: 0.48em; margin-top: 0.4em;">
+		<table style="margin: 0 auto;">
+			<tr>
+				<td style="padding: 0.2em 0.6em;"><code>CVE-2026-25253</code></td>
+				<td style="padding: 0.2em 0.6em;">1-click RCE via CSRF &mdash; WebSocket origin not validated</td>
+				<td style="padding: 0.2em 0.6em; color: #c0392b;"><strong>CVSS 8.8</strong></td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.6em;"><code>CVE-2026-24764</code></td>
+				<td style="padding: 0.2em 0.6em;">RCE via prompt injection in Slack channel descriptions</td>
+				<td style="padding: 0.2em 0.6em; color: #c0392b;"><strong>High</strong></td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.6em;"><code>CVE-2026-26324</code></td>
+				<td style="padding: 0.2em 0.6em;">SSRF guard bypass via IPv6-mapped loopback</td>
+				<td style="padding: 0.2em 0.6em; color: #c0392b;"><strong>High</strong></td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.6em;"><code>CVE-2026-27488</code></td>
+				<td style="padding: 0.2em 0.6em;">SSRF via cron webhooks to internal endpoints</td>
+				<td style="padding: 0.2em 0.6em; color: #c0392b;"><strong>High</strong></td>
+			</tr>
+		</table>
+	</div>
+	<p style="font-size: 0.45em; color: #888; margin-top: 0.5em;">42,665 publicly exposed instances. 341 malicious skills on ClawHub. 335 designed to steal macOS passwords.</p>
+</section>
+
+<!-- Slide 6: Why Does This Matter? -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace; font-size: 1.1em; line-height: 1.6;">"Risk tolerance is proportional<br>to how much you hate the task."</h3>
+	<p style="font-size: 0.55em; color: #888;">&mdash; D. MacAlpine</p>
+</section>
+
+<!-- Slide 7: Fire Safety Demo -->
+<section data-transition="none" data-background-image="figures/firesafety.png" data-background-size="contain" data-background-color="#1e1e2e">
+</section>
+
+<!-- Slide 8: The Confused Deputy -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">The Confused Deputy</h3>
+	<img src="figures/confused_deputy.jpg" class="stretch" style="border: 0; box-shadow: none; background: none;">
+</section>
+
+<!-- Slide 9: The Lethal Trifecta -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">The Lethal Trifecta</h3>
+	<p style="font-size: 0.45em; color: #888;">Simon Willison, July 2025 &mdash; coined "prompt injection"</p>
+	<div style="font-size: 0.55em; margin: 0.3em auto; max-width: 80%;">
+		<p>Any two is manageable. All three is exploitable.</p>
+		<table style="margin: 0.4em auto;">
+			<tr><td style="padding: 0.2em 0.5em; font-size: 1.2em; font-weight: bold; color: #c0392b;">A</td><td style="padding: 0.2em 0.5em;">Access to private or sensitive data</td></tr>
+			<tr><td style="padding: 0.2em 0.5em; font-size: 1.2em; font-weight: bold; color: #c0392b;">B</td><td style="padding: 0.2em 0.5em;">Exposure to untrusted content (web, messages, files, email)</td></tr>
+			<tr><td style="padding: 0.2em 0.5em; font-size: 1.2em; font-weight: bold; color: #c0392b;">C</td><td style="padding: 0.2em 0.5em;">Ability to communicate externally</td></tr>
+		</table>
+	</div>
+	<pre style="font-size: 0.42em; text-align: left; width: 80%; margin: 0.3em auto; box-shadow: none;"><code class="plaintext">Attacker embeds instruction in content agent will read  [B]
+  → Agent reads it, accesses your data                   [A]
+  → Agent exfiltrates via web/email/Telegram             [C]</code></pre>
+	<p style="font-size: 0.5em; margin-top: 0.4em;"><strong>Meta's "Agentic Rule of Two":</strong> remove any one leg and the chain breaks.</p>
+</section>
+
+
+<!-- Slide 11: OpenClaw Architecture (vertical section) -->
+<section>
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.2em;">What OpenClaw Actually Is</h3>
+	<div style="position: relative; width: 95%; margin: 0 auto; font-size: 0.48em;">
+		<!-- Row 1: Channels -->
+		<div style="display: flex; justify-content: center; gap: 0.4em; margin-bottom: 0.3em;">
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">Slack</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">Telegram</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">WhatsApp</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">Discord</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">Teams</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">Signal</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">iMessage</div>
+			<div style="background: #e8f4fd; border: 2px solid #5ba3d9; border-radius: 6px; padding: 0.3em 0.5em; text-align: center;">+6 more</div>
+		</div>
+		<!-- Row 2: Gateway -->
+		<div style="display: flex; justify-content: center; gap: 0.8em; margin: 0.5em 0;">
+			<div style="background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 0.4em 1.2em; text-align: center; font-weight: bold;">
+				Gateway<br><span style="font-weight: normal; font-size: 0.85em;">ws://127.0.0.1:18789</span>
+			</div>
+			<div style="display: flex; gap: 0.4em; align-items: center;">
+				<div style="background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 0.4em 0.6em; text-align: center;">TUI</div>
+				<div style="background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 0.4em 0.6em; text-align: center;">Web UI</div>
+			</div>
+		</div>
+		<!-- Row 3: Agent Core -->
+		<div style="display: flex; justify-content: center; gap: 0.8em; margin: 0.5em 0; align-items: center;">
+			<div style="background: #fdf2e8; border: 2px solid #e67e22; border-radius: 6px; padding: 0.4em 1em; text-align: center; font-weight: bold; min-width: 200px;">
+				Orchestrator<br>
+				<span style="font-weight: normal; font-size: 0.85em;">Frontier model + <code style="font-size: 0.95em;">exec</code><br>spawns sub-agents (sandboxed or not)</span>
+			</div>
+			<div style="display: flex; flex-direction: column; gap: 0.3em;">
+				<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.3em 0.6em; text-align: center; font-size: 0.9em;"><code>SOUL.md</code> / <code>MEMORY.md</code><br>persistent identity</div>
+				<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.3em 0.6em; text-align: center; font-size: 0.9em;"><code>HEARTBEAT.md</code><br>autonomous cron</div>
+			</div>
+		</div>
+		<!-- Row 4: Nodes and ClawHub -->
+		<div style="display: flex; justify-content: center; gap: 1.5em; margin: 0.5em 0;">
+			<div style="background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.4em 1em; text-align: center;">
+				<strong>Nodes</strong><br>
+				<span style="font-size: 0.85em;">macOS / iOS / Android / Linux<br>WebSocket pairing required</span>
+			</div>
+			<div style="background: #fdedec; border: 3px solid #c0392b; border-radius: 6px; padding: 0.4em 1em; text-align: center;">
+				<strong style="color: #c0392b;">ClawHub</strong><br>
+				<span style="font-size: 0.85em;">52+ skills, npm-style install<br><strong>no review gate</strong></span>
+			</div>
+		</div>
+	</div>
+	<!-- Danger Will Robinson -->
+	<div style="position: absolute; bottom: 10px; right: 30px; font-size: 0.3em; color: #888; text-align: right;">
+		&#x1F916; <em>"Danger, Will Robinson, danger."</em>
+	</div>
+	<div class="bottom" style="position: absolute; top: 650px; width: 100%; text-align: center;">
+		<small style="font-size: 0.4em; color: #888;">430k lines of vibe-coded TypeScript. Merging 100+ PRs per day.</small>
+	</div>
+</section>
+
+<!-- Slide 11b: NanoClaw -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.1em;">NanoClaw</h3>
+	<div style="font-size: 0.5em; max-width: 85%; margin: 0.3em auto; text-align: left;">
+		<p><strong>~4k lines of TypeScript.</strong> Orchestrator is ~2,200 lines. Message loop is 89.</p>
+		<table style="margin: 0.4em auto;">
+			<tr><th style="padding: 0.2em 0.6em;"></th><th style="padding: 0.2em 0.6em;">OpenClaw</th><th style="padding: 0.2em 0.6em;">NanoClaw</th></tr>
+			<tr><td style="padding: 0.2em 0.6em;">Codebase</td><td style="padding: 0.2em 0.6em;">430k lines</td><td style="padding: 0.2em 0.6em;">~4k lines</td></tr>
+			<tr><td style="padding: 0.2em 0.6em;">Architecture</td><td style="padding: 0.2em 0.6em;">Agent <em>is</em> the orchestrator &mdash; exec, memory, identity, everything</td><td style="padding: 0.2em 0.6em;">Orchestrator just routes messages and spawns containers</td></tr>
+			<tr><td style="padding: 0.2em 0.6em;">Delegation</td><td style="padding: 0.2em 0.6em;">Top-level agent delegates to sub-agents</td><td style="padding: 0.2em 0.6em;">Orchestrator delegates to containerized Claude</td></tr>
+			<tr><td style="padding: 0.2em 0.6em;">Isolation</td><td style="padding: 0.2em 0.6em;">Shared host process</td><td style="padding: 0.2em 0.6em;">Container per group, stdin/stdout only</td></tr>
+			<tr><td style="padding: 0.2em 0.6em;">Audit time</td><td style="padding: 0.2em 0.6em;">Good luck</td><td style="padding: 0.2em 0.6em;">An afternoon</td></tr>
+		</table>
+	</div>
+	<div style="font-size: 0.48em; max-width: 85%; margin: 0.4em auto; text-align: left; border-left: 3px solid #27ae60; padding-left: 0.8em;">
+		<strong>The clever part:</strong> you don't add features to the orchestrator. Skills are <code>.claude/skills/</code> files that instruct Claude on how to patch the orchestrator for your feature. Even if the code drifts, Claude can figure it out.
+	</div>
+</section>
+</section>
+
+<!-- Slide 11c: OpenClaw Screenshots -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">OpenClaw in Practice</h3>
+	<div style="font-size: 0.6em; color: #888; margin: 2em auto;">
+		<p><em>[Screenshots: openclaw status, openclaw doctor]</em></p>
+		<p><em>[To be added]</em></p>
+	</div>
+</section>
+
+<!-- Slide 11d: Security Recommendations -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">Hardening OpenClaw</h3>
+	<div style="font-size: 0.48em; text-align: left; max-width: 90%; margin: 0.3em auto;">
+		<table>
+			<tr><th style="padding: 0.2em 0.5em;" colspan="2">Deployment</th></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Run on a Tailnet</td><td style="padding: 0.15em 0.5em;">Never expose gateway to public internet. SSH tunnel or Tailscale only.</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Dedicated machine or VM</td><td style="padding: 0.15em 0.5em;">Separate from your daily driver. Blast radius containment.</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Dedicated OS user</td><td style="padding: 0.15em 0.5em;">Run OpenClaw as its own user. Unix permissions enforce the boundary.</td></tr>
+			<tr><th style="padding: 0.4em 0.5em 0.2em;" colspan="2">Credentials</th></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Own credentials for everything</td><td style="padding: 0.15em 0.5em;">Dedicated email, dedicated accounts. <strong>Do not share your personal credentials.</strong></td></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Gateway loopback only</td><td style="padding: 0.15em 0.5em;"><code>gateway.bind="loopback"</code> &mdash; default, don't change it.</td></tr>
+			<tr><th style="padding: 0.4em 0.5em 0.2em;" colspan="2">Runtime</th></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Sandbox non-main sessions</td><td style="padding: 0.15em 0.5em;">Group chats and channels run in per-session Docker containers.</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Workspace-only filesystem</td><td style="padding: 0.15em 0.5em;"><code>tools.fs.workspaceOnly: true</code> &mdash; restrict reads/writes.</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Run <code>openclaw doctor</code></td><td style="padding: 0.15em 0.5em;">It finds misconfigurations. Use it.</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Run <code>openclaw --audit</code></td><td style="padding: 0.15em 0.5em;">Audit what the agent has been doing.</td></tr>
+		</table>
+	</div>
+	<div style="font-size: 0.55em; margin-top: 0.5em; padding: 0.4em 0.8em; background: #fdedec; border: 2px solid #c0392b; border-radius: 6px; display: inline-block;">
+		&#x26A0;&#xFE0F; <strong>Avoid ClawHub.</strong> 341 malicious skills found. 335 designed to steal macOS passwords. Cisco found skills exfiltrating data in Base64 chunks. There is no review gate.
+	</div>
+</section>
+</section>
+
+<!-- Slide 12: The Credential Paradox -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">The Credential Paradox</h3>
+	<div style="font-size: 0.55em; max-width: 85%; margin: 0.3em auto; text-align: left;">
+		<p>To be useful, the agent needs credentials: API tokens, email, passwords, SSH keys.</p>
+		<div style="margin: 0.5em 0;">
+			<p><strong>Option 1:</strong> Store them in <code>openclaw.json</code></p>
+			<p style="color: #888; margin-left: 1em;">Agent can read its own config. So can any prompt injection.</p>
+		</div>
+		<div style="margin: 0.5em 0;">
+			<p><strong>Option 2:</strong> Use the 1Password skill</p>
+			<p style="color: #888; margin-left: 1em;">Credentials stored in 1Password, accessed via <code>op</code> CLI. Proper secret management.</p>
+		</div>
+	</div>
+	<div style="font-size: 0.6em; margin: 0.4em auto; max-width: 80%;">
+		<p>But the agent has <code>exec</code>.</p>
+		<p style="margin-top: 0.2em;">It can run <code>op read</code> any time it wants.</p>
+	</div>
+	<blockquote style="font-size: 0.55em; border-left: 3px solid #333; padding-left: 0.8em; margin-top: 0.5em;">You cannot hide a secret from a process that has shell access to the machine the secret is on.</blockquote>
+	<div style="font-size: 0.5em; margin-top: 0.5em;">
+		<p>The Lethal Trifecta is complete:</p>
+		<span style="display: inline-block; background: #fdedec; border: 2px solid #c0392b; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #c0392b;">A &mdash; access to private or sensitive data</span>
+		<span style="display: inline-block; background: #fdedec; border: 2px solid #c0392b; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #c0392b;">B &mdash; exposure to untrusted content</span>
+		<span style="display: inline-block; background: #fdedec; border: 2px solid #c0392b; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #c0392b;">C &mdash; ability to communicate externally</span>
+	</div>
+</section>
+
+<!-- Slide 13: The Browser Problem (vertical section) -->
+<section>
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">The Agent's Browser</h3>
+	<p style="font-size: 0.5em; color: #555;">Five ways an agent can talk to the web. They are not equivalent.</p>
+	<div style="font-size: 0.45em; max-width: 90%; margin: 0.4em auto;">
+		<table>
+			<tr>
+				<th style="padding: 0.3em 0.5em;">Tool</th>
+				<th style="padding: 0.3em 0.5em;">What it does</th>
+				<th style="padding: 0.3em 0.5em;">HttpOnly cookies</th>
+				<th style="padding: 0.3em 0.5em;">JS execution</th>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>curl</code> / <code>httpx</code></td>
+				<td style="padding: 0.2em 0.5em;">Raw HTTP requests</td>
+				<td style="padding: 0.2em 0.5em;">N/A &mdash; no browser</td>
+				<td style="padding: 0.2em 0.5em;">No</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>web_fetch</code></td>
+				<td style="padding: 0.2em 0.5em;">Fetch + parse content</td>
+				<td style="padding: 0.2em 0.5em;">N/A &mdash; no browser</td>
+				<td style="padding: 0.2em 0.5em;">No</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>browser</code></td>
+				<td style="padding: 0.2em 0.5em;">Calls Playwright, but sanitized</td>
+				<td style="padding: 0.2em 0.5em; color: #27ae60;"><strong>Respected</strong></td>
+				<td style="padding: 0.2em 0.5em;">Limited</td>
+			</tr>
+			<tr style="background: #fdedec;">
+				<td style="padding: 0.2em 0.5em;"><code>Playwright</code></td>
+				<td style="padding: 0.2em 0.5em;">Full browser automation</td>
+				<td style="padding: 0.2em 0.5em; color: #c0392b;"><strong>Bypassed</strong></td>
+				<td style="padding: 0.2em 0.5em;">Full</td>
+			</tr>
+			<tr style="background: #fdedec;">
+				<td style="padding: 0.2em 0.5em;"><strong>CDP</strong></td>
+				<td style="padding: 0.2em 0.5em;">Chrome DevTools Protocol &mdash; operates <em>below</em> the browser security model</td>
+				<td style="padding: 0.2em 0.5em; color: #c0392b;"><strong>Bypassed</strong></td>
+				<td style="padding: 0.2em 0.5em;">Full + network interception</td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<!-- Slide 13b: CDP Deep Dive -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;"><code>HttpOnly</code> Means Nothing Here</h3>
+	<div style="font-size: 0.5em; max-width: 85%; margin: 0.3em auto; text-align: left;">
+		<p>Browsers mark sensitive cookies <code>HttpOnly</code> to block JavaScript access. That's the defense against XSS.</p>
+		<p style="margin-top: 0.3em;"><code>CDP Network.getAllCookies</code> bypasses this entirely. It operates below the browser security model.</p>
+		<div style="margin-top: 0.5em;">
+			<p><strong>With CDP the agent gets:</strong></p>
+			<ul>
+				<li>All cookies, including <code>HttpOnly</code></li>
+				<li>localStorage, IndexedDB</li>
+				<li>Network interception &mdash; read/modify requests in flight</li>
+				<li><code>Runtime.evaluate</code> &mdash; execute arbitrary JS in any page context</li>
+				<li>Capture credentials from password fields as you type</li>
+			</ul>
+		</div>
+	</div>
+	<blockquote style="font-size: 0.5em; border-left: 3px solid #c0392b; padding-left: 0.8em; margin-top: 0.4em;">The entire browser security model &mdash; same-origin policy, HttpOnly, CSP &mdash; is a suggestion to CDP.</blockquote>
+</section>
+
+<!-- Slide 13c: Order Matters -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">Order Matters</h3>
+	<div style="font-size: 0.5em; max-width: 85%; margin: 0.4em auto; text-align: left;">
+		<table>
+			<tr>
+				<th style="padding: 0.3em 0.5em;">Scenario</th>
+				<th style="padding: 0.3em 0.5em;">What's compromised</th>
+			</tr>
+			<tr style="background: #fdedec;">
+				<td style="padding: 0.3em 0.5em;">Attach agent <strong>before</strong> you log in</td>
+				<td style="padding: 0.3em 0.5em;">Credentials &mdash; captured from password fields via <code>Runtime.evaluate</code> or intercepted from POST body</td>
+			</tr>
+			<tr style="background: #fef9e7;">
+				<td style="padding: 0.3em 0.5em;">Log in first, <strong>then</strong> attach agent</td>
+				<td style="padding: 0.3em 0.5em;">Cookies &mdash; credentials are gone (POSTed and cleared), but session cookies are exposed</td>
+			</tr>
+		</table>
+		<p style="margin-top: 0.5em;">"Login first, then attach" is hygiene, not a defense. Cookies are still exposed.</p>
+		<div style="margin-top: 0.5em; padding: 0.4em 0.8em; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px;">
+			<strong>Recommendation:</strong> Use a dedicated browser profile for agent browsing. Never attach an agent to your primary authenticated session.
+		</div>
+		<div style="margin-top: 0.5em;">
+			<p><strong>A note on agent extensions:</strong> Every frontier lab now ships a browser extension &mdash; OpenAI, Anthropic, Google, others. These are effectively Playwright/CDP sidecars. Presumably sandboxed. But a black box. You're trusting the vendor's security model, and you can't audit it.</p>
+		</div>
+	</div>
+</section>
+</section>
+
+<!-- Slide 14: CrowdStrike Sees It... So What? -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">CrowdStrike Sees It</h3>
+	<div style="font-size: 0.5em; max-width: 90%; margin: 0.3em auto; text-align: left;">
+		<p>I did the responsible thing:</p>
+		<ul>
+			<li>Installed OpenClaw on a VCM VM &mdash; wanted CrowdStrike visibility if something went wrong</li>
+			<li>Hardened config, daily updates, workspace-only filesystem</li>
+			<li>CrowdStrike detected it. Got a Teams message from the security team.</li>
+			<li>Nick was aware.</li>
+		</ul>
+	</div>
+	<div style="display: flex; justify-content: center; gap: 1.5em; margin: 0.4em auto; max-width: 90%;">
+		<div style="flex: 1; background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 0.6em; text-align: center; font-size: 0.5em; color: #888;">
+			<em>[Screenshot: openclaw status]</em>
+		</div>
+		<div style="flex: 1; background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 0.6em; text-align: center; font-size: 0.5em; color: #888;">
+			<em>[Screenshot: Teams message from security]</em>
+		</div>
+	</div>
+	<div style="font-size: 0.55em; max-width: 85%; margin: 0.5em auto; padding: 0.4em 0.8em; background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px;">
+		<strong>But it doesn't matter where it runs.</strong> The agent can SSH, browse, and authenticate from anywhere. The gateway can run on a personal laptop, a Raspberry Pi, a VPS in another country. It connects to Duke systems over HTTPS with valid credentials. It can connect to Duke from anywhere. CrowdStrike only sees it if you choose to run it on a machine they monitor.
+	</div>
+</section>
+
+<!-- Slide 15: Preamble + The Broker -->
+<section>
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">So Now What?</h3>
+	<div style="font-size: 0.55em; max-width: 85%; margin: 0.4em auto; text-align: left;">
+		<p>Agents are only useful if we can actually use them.</p>
+		<p style="margin-top: 0.3em;">The credential paradox is a hard stop for Duke workflows. The agent needs to authenticate. Authentication requires credentials. Credentials on a machine with <code>exec</code> are not secrets.</p>
+		<p style="margin-top: 0.3em;">I could demo cool things agents can do. That's not the point.</p>
+		<p style="margin-top: 0.3em;"><strong>The point: how do we do it securely?</strong></p>
+	</div>
+	<div style="margin: 0.5em auto; max-width: 70%; text-align: center;">
+		<div style="background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 1.5em 1em; font-size: 0.5em; color: #888;">
+			<em>[GIF: Kuali loading spinner &mdash; 20 seconds for a simple form]</em>
+			<p style="margin-top: 0.3em; color: #555;">Where did we go wrong?</p>
+		</div>
+	</div>
+	<p style="font-size: 0.5em; color: #555; margin-top: 0.4em;">The ideal target for agent automation: tedious, authenticated, slow.</p>
+	<p style="font-size: 0.45em; color: #888; font-style: italic; margin-top: 0.2em;">Will end with a demo: my agent ordering pizza for lunch from OIT.</p>
+</section>
+
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">The Broker: Narrowing the Surface</h3>
+	<div style="font-size: 0.5em; max-width: 90%; margin: 0.3em auto; text-align: left;">
+		<p><strong>Problem:</strong> The Lethal Trifecta is complete &mdash; access to sensitive data, exposure to untrusted content, ability to communicate externally.</p>
+		<p style="margin-top: 0.2em;"><strong>Solution:</strong> Degrade all three legs. Make the chain hard to close.</p>
+	</div>
+	<pre style="font-size: 0.32em; text-align: left; width: 90%; margin: 0.3em auto; box-shadow: none;"><code class="plaintext">1. Agent needs to authenticate     →  notifies broker via Unix socket
+2. Broker asks owner on Telegram   →  "duke-agent needs Shib auth — unlock?"
+3. Owner sends unlock phrase        →  separate bot, agent can't see it
+4. Broker combines split-key        →  scrypt(disk_secret + user_phrase) → GPG
+5. Broker does the Shib dance       →  pure HTTP, no browser
+6. Broker returns cookies            →  short-lived (10 min Shib session TTL)
+7. Agent never sees password         →  never sees TOTP secret</code></pre>
+	<div style="font-size: 0.45em; max-width: 90%; margin: 0.3em auto;">
+		<table>
+			<tr><td style="padding: 0.15em 0.5em;"><strong>Split-key</strong></td><td style="padding: 0.15em 0.5em;"><code>broker_key.secret</code> (on disk) + user phrase (in your head, via Telegram) &mdash; neither alone unlocks</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;"><strong>Short-lived cookies</strong></td><td style="padding: 0.15em 0.5em;">Shib session TTL set to 10 minutes in <code>shibboleth.xml</code> &mdash; limits exposure window</td></tr>
+			<tr><td style="padding: 0.15em 0.5em;"><strong>Auto-lock</strong></td><td style="padding: 0.15em 0.5em;">5 min idle timeout. Locks on completion. Credentials purged from memory.</td></tr>
+		</table>
+	</div>
+	<div style="font-size: 0.5em; margin-top: 0.3em;">
+		<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">A &mdash; narrowed: short-lived cookies, never credentials</span>
+		<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">B &mdash; narrowed: duke.edu only, not the open internet</span>
+		<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">C &mdash; narrowed: DNS-jailed to duke.edu, can't exfiltrate</span>
+	</div>
+</section>
+
+<!-- Slide 15b: Container Hierarchy -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.2em;">Container Topology</h3>
+	<div style="position: relative; width: 90%; margin: 0.2em auto; font-size: 0.44em;">
+		<!-- Host layer -->
+		<div style="border: 2px solid #888; border-radius: 8px; padding: 0.5em 0.6em 0.4em; background: #fafafa;">
+			<div style="font-weight: bold; color: #555; margin-bottom: 0.4em;">Host (VCM VM)</div>
+			<div style="display: flex; gap: 0.6em; align-items: flex-start;">
+				<!-- Main Agent -->
+				<div style="background: #fdf2e8; border: 2px solid #e67e22; border-radius: 6px; padding: 0.4em 0.6em; text-align: center; min-width: 140px;">
+					<strong>Main Agent</strong><br>
+					<span style="font-size: 0.85em;">orchestrator + exec<br>spawns sub-agents</span>
+				</div>
+				<!-- Broker -->
+				<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.4em 0.6em; text-align: center; min-width: 140px;">
+					<strong>Credential Broker</strong><br>
+					<span style="font-size: 0.85em;">Unix socket daemon<br>split-key GPG</span>
+				</div>
+				<!-- Docker network -->
+				<div style="flex: 1; border: 2px dashed #5ba3d9; border-radius: 8px; padding: 0.4em 0.5em 0.3em; background: #f0f8ff;">
+					<div style="font-weight: bold; color: #5ba3d9; margin-bottom: 0.3em;">Docker network: <code>duke-net</code></div>
+					<div style="display: flex; gap: 0.5em; flex-wrap: wrap;">
+						<!-- Duke Agent -->
+						<div style="background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.3em 0.5em; text-align: center; flex: 1; min-width: 120px;">
+							<strong>Duke Agent</strong><br>
+							<span style="font-size: 0.85em;">ephemeral container<br>no host access</span>
+						</div>
+						<!-- Playwright/CDP -->
+						<div style="background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.3em 0.5em; text-align: center; flex: 1; min-width: 120px;">
+							<strong>Playwright / CDP</strong><br>
+							<span style="font-size: 0.85em;">headless browser<br>duke-agent talks freely</span>
+						</div>
+						<!-- CoreDNS -->
+						<div style="background: #fdedec; border: 2px solid #c0392b; border-radius: 6px; padding: 0.3em 0.5em; text-align: center; flex: 1; min-width: 120px;">
+							<strong style="color: #c0392b;">CoreDNS</strong><br>
+							<span style="font-size: 0.85em;">strict allowlist<br>*.duke.edu only</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Traffic flow annotations -->
+		<div style="margin-top: 0.5em; display: flex; gap: 1em; justify-content: center;">
+			<div style="background: #eafaf1; border: 1px solid #27ae60; border-radius: 4px; padding: 0.2em 0.6em;">
+				&#x2705; duke-agent &harr; playwright &mdash; unrestricted on <code>duke-net</code>
+			</div>
+			<div style="background: #fdedec; border: 1px solid #c0392b; border-radius: 4px; padding: 0.2em 0.6em;">
+				&#x1F6AB; duke-agent &rarr; internet &mdash; DNS resolves *.duke.edu only
+			</div>
+		</div>
+		<div style="margin-top: 0.4em; display: flex; gap: 1em; justify-content: center;">
+			<div style="background: #fef9e7; border: 1px solid #d4ac0d; border-radius: 4px; padding: 0.2em 0.6em;">
+				&#x1F512; duke-agent &rarr; broker &mdash; Unix socket mount, JSON protocol
+			</div>
+			<div style="background: #f0f0f0; border: 1px solid #888; border-radius: 4px; padding: 0.2em 0.6em;">
+				&#x1F4E6; containers are ephemeral &mdash; destroyed after each workflow
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Slide 15c: Broker Sequence Diagram -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">Broker Flow</h3>
+	<div class="mermaid" style="font-size: 0.45em;">
+sequenceDiagram
+    participant User as User (Telegram)
+    participant Main as OpenClaw Main Agent
+    participant Duke as Duke Agent<br/>(network-jailed)
+    participant Broker as Credential Broker<br/>(host daemon, socket-only)
+    participant Shib as Duke Shib/Duo
+
+    User->>Main: Task requiring Duke auth
+    Main->>Duke: Delegate: access Shib-protected site
+
+    Duke->>Broker: shib_auth(target_url)
+    Note over Broker: Broker is locked
+
+    Broker->>User: "unlock phrase needed"
+    User->>Broker: unlock phrase (split-key half)
+    Note over Broker: scrypt(disk_secret + user_phrase)<br/>→ GPG → decrypt NetID + TOTP
+
+    Broker->>Shib: httpx: login + Duo MFA (pure HTTP)
+    Shib-->>Broker: SAML assertion + session cookies
+
+    Broker-->>Duke: Session cookies ONLY<br/>(10 min TTL, never passwords)
+    Duke->>Duke: Navigate with cookies
+    Note over Broker: Auto-locks on idle / completion<br/>Credentials purged from memory
+	</div>
+</section>
+
+<!-- Slide 15c: Broker Operations -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">Broker Operations</h3>
+	<p style="font-size: 0.45em; color: #888;">Unix socket &rarr; JSON request &rarr; JSON response. Agent never sees raw credentials.</p>
+	<div style="font-size: 0.44em; max-width: 92%; margin: 0.3em auto;">
+		<table>
+			<tr>
+				<th style="padding: 0.25em 0.5em;">Operation</th>
+				<th style="padding: 0.25em 0.5em;">Who</th>
+				<th style="padding: 0.25em 0.5em;">What it does</th>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>status</code></td>
+				<td style="padding: 0.2em 0.5em;">Any</td>
+				<td style="padding: 0.2em 0.5em;">Is the broker running? Is it unlocked?</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>notify</code></td>
+				<td style="padding: 0.2em 0.5em;">Agent</td>
+				<td style="padding: 0.2em 0.5em;">Send Telegram message to owner. Works even when locked.</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>shib_auth</code></td>
+				<td style="padding: 0.2em 0.5em;">Agent</td>
+				<td style="padding: 0.2em 0.5em;">Full Shib + Duo login. Returns cookies only. Triggers unlock if locked.</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>submit_review</code></td>
+				<td style="padding: 0.2em 0.5em;">Agent</td>
+				<td style="padding: 0.2em 0.5em;">Send summary + screenshot to owner. Blocks until approve / reject / hold.</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>complete</code></td>
+				<td style="padding: 0.2em 0.5em;">Agent</td>
+				<td style="padding: 0.2em 0.5em;">Shib logout, purge credentials, auto-lock.</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>lock</code></td>
+				<td style="padding: 0.2em 0.5em;">Owner</td>
+				<td style="padding: 0.2em 0.5em;">Clear GPG passphrase. Immediate.</td>
+			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><code>unlock</code></td>
+				<td style="padding: 0.2em 0.5em;">Owner</td>
+				<td style="padding: 0.2em 0.5em;">Telegram DM &rarr; split-key &rarr; scrypt &rarr; GPG preset. Message auto-deleted.</td>
+			</tr>
+			<tr style="background: #fdedec;">
+				<td style="padding: 0.2em 0.5em;"><code style="color: #c0392b; font-weight: bold;">/exec off</code></td>
+				<td style="padding: 0.2em 0.5em;">Owner</td>
+				<td style="padding: 0.2em 0.5em; color: #c0392b;"><strong>Kill switch.</strong> Strips <code>exec</code> + <code>process</code> from main agent, restarts gateway. Remote off-switch via Telegram.</td>
+			</tr>
+		</table>
+	</div>
+	<p style="font-size: 0.42em; color: #888; margin-top: 0.4em;">Rate-limited to 30 req/hour per agent. All requests logged. Allowlist per agent_id in <code>broker.yaml</code>.</p>
+</section>
+
+<!-- Slide 15c: What the Broker Doesn't Solve -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">What the Broker Doesn't Solve</h3>
+	<div style="font-size: 0.55em; max-width: 85%; margin: 0.5em auto; text-align: left;">
+		<ul style="line-height: 1.8;">
+			<li><strong>CDP session theft</strong> &mdash; agent can still read cookies from an attached browser tab</li>
+			<li><strong>The fire safety problem</strong> &mdash; agent does what you ask, including things you shouldn't ask</li>
+			<li><strong>Node fleet pivoting</strong> &mdash; broker secures credentials, not network topology</li>
+			<li><strong>Lateral movement</strong> &mdash; <code>sessions_send</code> between agent sessions</li>
+			<li><strong>Context persistence</strong> &mdash; data the agent reads doesn't expire from context</li>
+		</ul>
+	</div>
+	<p style="font-size: 0.55em; margin-top: 0.5em; color: #555;">Credibility comes from acknowledging limits.</p>
+</section>
+</section>
+
+<!-- Slide 16: The Agent Loop -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">The Agent Loop</h3>
+	<p style="font-size: 0.55em; color: #555;">"Convert my lecture video to a transcript and make a study guide."</p>
+	<pre style="font-size: 0.38em; text-align: left; width: 85%; margin: 0.4em auto; box-shadow: none;"><code class="plaintext">1. Downloads video from URL
+2. Tries ffmpeg to extract audio
+3. Missing codec. No binary available.
+4. Downloads ffmpeg source
+5. Configures and compiles from scratch
+6. Extracts audio, runs transcription
+7. Generates study guide
+8. Done.</code></pre>
+	<div style="font-size: 0.55em; max-width: 80%; margin: 0.4em auto;">
+		<p>A human would have stopped at step 3.</p>
+		<p style="margin-top: 0.3em;">The agent doesn't get frustrated. It doesn't take shortcuts. It just solves the next obstacle. <strong>That tenacity is the value proposition and the threat.</strong></p>
+	</div>
+</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+		<script>
+			mermaid.initialize({ startOnLoad: false, theme: 'default' });
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				transition: 'none',
+				plugins: [ RevealHighlight ]
+			});
+			Reveal.on('ready', () => mermaid.run({ querySelector: '.mermaid' }));
+			Reveal.on('slidechanged', () => mermaid.run({ querySelector: '.mermaid' }));
+		</script>
+	</body>
+</html>
