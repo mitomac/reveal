@@ -304,6 +304,27 @@
 	<h3 class="fragment fade-out" style="font-family: 'Fira Mono', monospace; color: #fff; background: rgba(0,0,0,0.7); display: inline-block; padding: 0.2em 0.6em; border-radius: 6px;">OpenClaw in Practice</h3>
 </section>
 
+<!-- CrowdStrike Sees It -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace;">CrowdStrike Sees It</h3>
+	<div style="font-size: 0.5em; max-width: 90%; margin: 0.3em auto; text-align: left;">
+		<ul>
+			<li>Installed OpenClaw on a VCM VM &mdash; wanted CrowdStrike visibility if something went wrong</li>
+			<li>Hardened config, daily updates, workspace-only filesystem</li>
+			<li>CrowdStrike detected it. Got a Teams message from the security team.</li>
+		</ul>
+	</div>
+	<div style="display: flex; justify-content: center; gap: 1.5em; margin: 0.4em auto; max-width: 90%; align-items: center;">
+		<div style="flex: 1; text-align: center;"><img src="figures/pedro-monkey.gif" style="max-height: 25vh; border: 0; box-shadow: none;"></div>
+		<div style="flex: 1; text-align: center;">
+			<img src="figures/crowdstrike-teams.jpg" style="max-height: 30vh; border: 1px solid #ccc; border-radius: 4px; box-shadow: none;">
+		</div>
+	</div>
+	<div style="font-size: 0.55em; max-width: 85%; margin: 0.5em auto; padding: 0.4em 0.8em; background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px;">
+		<strong>But it doesn't matter where it runs.</strong> The agent can SSH, browse, and authenticate from anywhere. The gateway can run on a personal laptop, a Raspberry Pi, a VPS in another country.
+	</div>
+</section>
+
 <!-- Slide 11d: Security Recommendations -->
 <section data-transition="none">
 	<h3 style="font-family: 'Fira Mono', monospace;">Hardening OpenClaw</h3>
@@ -352,6 +373,15 @@
 			<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">B &mdash; exposure to untrusted content</span>
 			<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">C &mdash; ability to communicate externally</span>
 		</div>
+	</div>
+</section>
+
+<!-- Transition: "But I didn't give it my password..." -->
+<section data-transition="none">
+	<h3 style="font-family: 'Fira Mono', monospace; font-size: 1.1em;">"But I didn't give it my password..."</h3>
+	<img src="figures/browser-puppet.png" style="max-height: 35vh; border: 0; box-shadow: none; margin: 0.3em auto;">
+	<div style="font-size: 0.55em; max-width: 80%; margin: 0.3em auto;">
+		<p>You logged in yourself. You let the agent drive your session via an extension.</p>
 	</div>
 </section>
 
@@ -437,7 +467,7 @@
 			</tr>
 			<tr style="background: #fef9e7;">
 				<td style="padding: 0.3em 0.5em;">Log in first, <strong>then</strong> attach agent</td>
-				<td style="padding: 0.3em 0.5em;">Cookies &mdash; credentials are gone (POSTed and cleared), but session cookies are exposed</td>
+				<td style="padding: 0.3em 0.5em;">Cookies &mdash; credentials are safe (POSTed and cleared), but session cookies are exposed</td>
 			</tr>
 		</table>
 		<p style="margin-top: 0.5em;">"Login first, then attach" is hygiene, not a defense. Cookies are still exposed.</p>
@@ -445,31 +475,10 @@
 			<strong>Recommendation:</strong> Use a dedicated browser profile for agent browsing. Never attach an agent to your primary authenticated session.
 		</div>
 		<div style="margin-top: 0.5em;">
-			<p><strong>A note on agent extensions:</strong> Every frontier lab now ships a browser extension &mdash; OpenAI, Anthropic, Google, others. These are effectively Playwright/CDP sidecars. Presumably sandboxed. But a black box. You're trusting the vendor's security model, and you can't audit it.</p>
+			<p><strong>A note on agent extensions:</strong> Every frontier lab now ships a browser extension &mdash; OpenAI, Anthropic, Google, others. These are effectively Playwright/CDP/Chromium sidecars. Presumably sandboxed. But a black box. You're trusting the vendor's security model, and you can't audit it.</p>
 		</div>
 	</div>
 </section>
-</section>
-
-<!-- Slide 14: CrowdStrike Sees It... So What? -->
-<section data-transition="none">
-	<h3 style="font-family: 'Fira Mono', monospace;">CrowdStrike Sees It</h3>
-	<div style="font-size: 0.5em; max-width: 90%; margin: 0.3em auto; text-align: left;">
-		<ul>
-			<li>Installed OpenClaw on a VCM VM &mdash; wanted CrowdStrike visibility if something went wrong</li>
-			<li>Hardened config, daily updates, workspace-only filesystem</li>
-			<li>CrowdStrike detected it. Got a Teams message from the security team.</li>
-		</ul>
-	</div>
-	<div style="display: flex; justify-content: center; gap: 1.5em; margin: 0.4em auto; max-width: 90%; align-items: center;">
-		<div style="flex: 1; text-align: center; font-size: 4em;">&#x1F99E;</div>
-		<div style="flex: 1; text-align: center;">
-			<img src="figures/crowdstrike-teams.jpg" style="max-height: 30vh; border: 1px solid #ccc; border-radius: 4px; box-shadow: none;">
-		</div>
-	</div>
-	<div style="font-size: 0.55em; max-width: 85%; margin: 0.5em auto; padding: 0.4em 0.8em; background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px;">
-		<strong>But it doesn't matter where it runs.</strong> The agent can SSH, browse, and authenticate from anywhere. The gateway can run on a personal laptop, a Raspberry Pi, a VPS in another country. It can connect to Duke with valid credentials. CrowdStrike only sees it if you choose to run it on a machine they monitor.
-	</div>
 </section>
 
 <!-- Slide 15: Preamble + The Broker -->
@@ -479,49 +488,27 @@
 	<div style="font-size: 0.55em; max-width: 85%; margin: 0.4em auto; text-align: left;">
 		<p>Agents are only useful if we can actually use them.</p>
 		<p style="margin-top: 0.3em;">The credential paradox is a hard stop for Duke workflows. The agent needs to authenticate. Authentication requires credentials. Credentials on a machine with <code>exec</code> are not secrets.</p>
-		<p style="margin-top: 0.3em;">I could demo cool things agents can do. That's not the point.</p>
-		<p style="margin-top: 0.3em;"><strong>The point: how do we do it securely?</strong></p>
 	</div>
 	<div style="margin: 0.5em auto; max-width: 70%; text-align: center;">
-		<div style="background: #f0f0f0; border: 2px solid #888; border-radius: 6px; padding: 1.5em 1em; font-size: 0.5em; color: #888;">
-			<em>[GIF: Kuali loading spinner &mdash; 20 seconds for a simple form]</em>
-			<p style="margin-top: 0.3em; color: #555;">Where did we go wrong?</p>
+		<img src="figures/kuali-loading.gif" style="max-height: 25vh; border: 1px solid #ccc; border-radius: 6px; box-shadow: none;">
+		<div style="font-size: 0.5em; color: #555; margin-top: 0.3em;">
+			<strong>25 Years of Progress</strong>
+			<table style="margin: 0.3em auto; font-size: 0.95em;">
+				<tr><td style="padding: 0.15em 0.5em; font-weight: bold;">2001</td><td style="padding: 0.15em 0.5em;">50ms to render a form with Perl CGI</td></tr>
+				<tr><td style="padding: 0.15em 0.5em; font-weight: bold;">2026</td><td style="padding: 0.15em 0.5em;">20s to boot a JavaScript runtime to render a form</td></tr>
+			</table>
+			<br>
+			<em>A task better suited for an agent with infinite patience.</em>
 		</div>
 	</div>
-	<p style="font-size: 0.5em; color: #555; margin-top: 0.4em;">The ideal target for agent automation: tedious, authenticated, slow.</p>
-	<p style="font-size: 0.45em; color: #888; font-style: italic; margin-top: 0.2em;">Will end with a demo: my agent ordering pizza for lunch from OIT.</p>
 </section>
 
-<section data-transition="none">
-	<h3 style="font-family: 'Fira Mono', monospace;">The Broker: Narrowing the Surface</h3>
-	<div style="font-size: 0.5em; max-width: 90%; margin: 0.3em auto; text-align: left;">
-		<p><strong>Problem:</strong> The Lethal Trifecta is complete &mdash; access to sensitive data, exposure to untrusted content, ability to communicate externally.</p>
-		<p style="margin-top: 0.2em;"><strong>Solution:</strong> Degrade all three legs. Make the chain hard to close.</p>
-	</div>
-	<pre style="font-size: 0.32em; text-align: left; width: 90%; margin: 0.3em auto; box-shadow: none;"><code class="plaintext">1. Agent needs to authenticate     →  notifies broker via Unix socket
-2. Broker asks owner on Telegram   →  "duke-agent needs Shib auth — unlock?"
-3. Owner sends unlock phrase        →  separate bot, agent can't see it
-4. Broker combines split-key        →  scrypt(disk_secret + user_phrase) → GPG
-5. Broker does the Shib dance       →  pure HTTP, no browser
-6. Broker returns cookies            →  short-lived (10 min Shib session TTL)
-7. Agent never sees password         →  never sees TOTP secret</code></pre>
-	<div style="font-size: 0.45em; max-width: 90%; margin: 0.3em auto;">
-		<table>
-			<tr><td style="padding: 0.15em 0.5em;"><strong>Split-key</strong></td><td style="padding: 0.15em 0.5em;"><code>broker_key.secret</code> (on disk) + user phrase (in your head, via Telegram) &mdash; neither alone unlocks</td></tr>
-			<tr><td style="padding: 0.15em 0.5em;"><strong>Short-lived cookies</strong></td><td style="padding: 0.15em 0.5em;">Shib session TTL set to 10 minutes in <code>shibboleth.xml</code> &mdash; limits exposure window</td></tr>
-			<tr><td style="padding: 0.15em 0.5em;"><strong>Auto-lock</strong></td><td style="padding: 0.15em 0.5em;">5 min idle timeout. Locks on completion. Credentials purged from memory.</td></tr>
-		</table>
-	</div>
-	<div style="font-size: 0.5em; margin-top: 0.3em;">
-		<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">A &mdash; narrowed: short-lived cookies, never credentials</span>
-		<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">B &mdash; narrowed: duke.edu only, not the open internet</span>
-		<span style="display: inline-block; background: #eafaf1; border: 2px solid #27ae60; border-radius: 6px; padding: 0.2em 0.5em; margin: 0.1em; font-weight: bold; color: #27ae60;">C &mdash; narrowed: DNS-jailed to duke.edu, can't exfiltrate</span>
-	</div>
+<!-- Container Topology (standalone) -->
 </section>
-
-<!-- Slide 15b: Container Hierarchy -->
+</section>
+<section>
 <section data-transition="none">
-	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.2em;">Container Topology</h3>
+	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.2em;">A Secure Credential Broker</h3>
 	<div style="position: relative; width: 90%; margin: 0.2em auto; font-size: 0.44em;">
 		<!-- Host layer -->
 		<div style="border: 2px solid #888; border-radius: 8px; padding: 0.5em 0.6em 0.4em; background: #fafafa;">
@@ -560,9 +547,9 @@
 					<div style="font-size: 0.85em; color: #888; text-align: center; font-style: italic;">broker user</div>
 					<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.4em 0.6em; text-align: center; min-width: 140px;">
 						<strong>Credential Broker</strong><br>
-						<span style="font-size: 0.85em;">Unix socket daemon<br>split-key GPG</span>
+						<span style="font-size: 0.85em;">Unix socket daemon<br>pass(1) vault, split-key GPG</span>
 					</div>
-					<div style="font-size: 0.8em; color: #888; text-align: center; margin-top: 0.3em;">Different OS user<br>No cross-talk</div>
+					<div style="font-size: 0.8em; color: #888; text-align: center; margin-top: 0.3em;">Different OS user<br>No cross-talk<br>Communicates with owner via Telegram</div>
 				</div>
 			</div>
 		</div>
@@ -586,7 +573,6 @@
 	</div>
 </section>
 
-<!-- Slide 15c: Broker Sequence Diagram -->
 <section data-transition="none">
 	<h3 style="font-family: 'Fira Mono', monospace;">Broker Flow</h3>
 	<div class="mermaid" style="font-size: 0.40em;">
@@ -675,8 +661,9 @@ sequenceDiagram
 	</div>
 	<p style="font-size: 0.42em; color: #888; margin-top: 0.4em;">Rate-limited to 30 req/hour per agent. All requests logged. Allowlist per agent_id in <code>broker.yaml</code>.</p>
 </section>
+</section>
 
-<!-- Slide: Trifecta Progression -->
+<!-- Slide: Trifecta Progression (standalone) -->
 <section data-transition="none">
 	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.15em;">The Trifecta, Narrowed</h3>
 	<p style="font-size: 0.42em; color: #888; margin-top: 0;">Any two is manageable. All three is exploitable. What if all three are present but degraded?</p>
@@ -726,9 +713,6 @@ sequenceDiagram
 	</div>
 	<p style="font-size: 0.45em; margin-top: 0.3em;">Open ocean &rarr; <strong>keyhole</strong>. The chain requires all three to align in a 10-min window, restricted to duke.edu, with no way to phone home.</p>
 </section>
-
-</section>
-
 
 <!-- Slide 17: My Agents -->
 <section>
