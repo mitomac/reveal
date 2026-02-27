@@ -6,7 +6,7 @@
 
 		<title>The Lobster in the Room</title>
 
-		<meta name="description" content="The security model exists. We built it for humans.">
+		<meta name="description" content="We built the security model for humans. Not agents.">
 		<meta name="author" content="David MacAlpine">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -64,7 +64,7 @@
 <section data-transition="none">
 	<div class="title-lobster">&#x1F99E;</div>
 	<div class="title-main">The Lobster in the Room</div>
-	<div class="title-sub">The security model exists. We built it for humans.</div>
+	<div class="title-sub">We built the security model for humans. Not agents.</div>
 </section>
 
 <!-- Slide 2: Chat → Code → Claw -->
@@ -203,7 +203,7 @@
 <!-- Slide 9: The Lethal Trifecta -->
 <section data-transition="none">
 	<h3 style="font-family: 'Fira Mono', monospace;">The Lethal Trifecta</h3>
-	<p style="font-size: 0.45em; color: #888;">Simon Willison, July 2025 &mdash; coined "prompt injection"</p>
+	<p style="font-size: 0.45em; color: #888;">Simon Willison &mdash; coined "prompt injection" (2022), "lethal trifecta" (June 2025)</p>
 	<div style="font-size: 0.55em; margin: 0.3em auto; max-width: 80%;">
 		<p>Any two is manageable. All three is exploitable.</p>
 		<div style="display: inline-block; border: 3px solid #c0392b; border-radius: 8px; padding: 0.5em 0.8em; background: #fdedec;">
@@ -224,7 +224,7 @@
 <!-- Slide 11: OpenClaw Architecture (vertical section) -->
 <section>
 <section data-transition="none">
-	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.2em;">What OpenClaw Actually Is</h3>
+	<h3 style="font-family: 'Fira Mono', monospace; margin-bottom: 0.2em;">OpenClaw</h3>
 	<div style="position: relative; width: 95%; margin: 0 auto; font-size: 0.48em;">
 		<!-- Row 1: Channels -->
 		<div style="display: flex; justify-content: center; gap: 0.4em; margin-bottom: 0.3em;">
@@ -256,6 +256,7 @@
 			<div style="display: flex; flex-direction: column; gap: 0.3em;">
 				<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.3em 0.6em; text-align: center; font-size: 0.9em;"><code>SOUL.md</code> / <code>MEMORY.md</code><br>persistent identity</div>
 				<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.3em 0.6em; text-align: center; font-size: 0.9em;"><code>HEARTBEAT.md</code><br>autonomous cron</div>
+				<div style="background: #fef9e7; border: 2px solid #d4ac0d; border-radius: 6px; padding: 0.3em 0.6em; text-align: center; font-size: 0.9em;"><code>SKILLS.md</code> / <code>AGENTS.md</code> / <code>TOOLS.md</code><br>capabilities</div>
 			</div>
 		</div>
 		<!-- Row 4: Nodes and ClawHub -->
@@ -271,7 +272,7 @@
 		</div>
 	</div>
 	<!-- Danger Will Robinson -->
-	<div style="position: absolute; bottom: 10px; right: 30px; font-size: 0.3em; color: #888; text-align: right;">
+	<div style="position: absolute; bottom: -20px; right: 30px; font-size: 0.45em; color: #888; text-align: right;">
 		&#x1F916; <em>"Danger, Will Robinson, danger."</em>
 	</div>
 	<div class="bottom" style="position: absolute; top: 650px; width: 100%; text-align: center;">
@@ -301,7 +302,6 @@
 
 <!-- Slide 11c: OpenClaw Screenshots -->
 <section data-transition="none" data-background-image="figures/openclaw-status.png" data-background-size="contain" data-background-color="#1e1e2e">
-	<h3 class="fragment fade-out" style="font-family: 'Fira Mono', monospace; color: #fff; background: rgba(0,0,0,0.7); display: inline-block; padding: 0.2em 0.6em; border-radius: 6px;">OpenClaw in Practice</h3>
 </section>
 
 <!-- CrowdStrike Sees It -->
@@ -310,12 +310,12 @@
 	<div style="font-size: 0.5em; max-width: 90%; margin: 0.3em auto; text-align: left;">
 		<ul>
 			<li>Installed OpenClaw on a VCM VM &mdash; wanted CrowdStrike visibility if something went wrong</li>
-			<li>Hardened config, daily updates, workspace-only filesystem</li>
-			<li>CrowdStrike detected it. Got a Teams message from the security team.</li>
+			<li>Hardened config, daily updates</li>
+			<li>&#x1F50D; CrowdStrike detected it. Got a Teams message from the security team.</li>
 		</ul>
 	</div>
 	<div style="display: flex; justify-content: center; gap: 1.5em; margin: 0.4em auto; max-width: 90%; align-items: center;">
-		<div style="flex: 1; text-align: center;"><img src="figures/pedro-monkey.gif" style="max-height: 25vh; border: 0; box-shadow: none;"></div>
+		<div style="flex: 1; text-align: center;"><img src="figures/pedro-monkey.gif" style="max-height: 30vh; border: 0; box-shadow: none;"></div>
 		<div style="flex: 1; text-align: center;">
 			<img src="figures/crowdstrike-teams.jpg" style="max-height: 30vh; border: 1px solid #ccc; border-radius: 4px; box-shadow: none;">
 		</div>
@@ -339,7 +339,6 @@
 			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Gateway loopback only</td><td style="padding: 0.15em 0.5em;"><code>gateway.bind="loopback"</code> &mdash; default, don't change it.</td></tr>
 			<tr><th style="padding: 0.4em 0.5em 0.2em;" colspan="2">Runtime</th></tr>
 			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Sandbox non-main sessions</td><td style="padding: 0.15em 0.5em;">Group chats and channels run in per-session Docker containers.</td></tr>
-			<tr><td style="padding: 0.15em 0.5em;">&#x2022; Workspace-only filesystem</td><td style="padding: 0.15em 0.5em;"><code>tools.fs.workspaceOnly: true</code> &mdash; restrict reads/writes.</td></tr>
 			<tr><td style="padding: 0.15em 0.5em;">&#x2022; <code style="font-family: 'Fira Mono', monospace;">openclaw doctor</code></td><td style="padding: 0.15em 0.5em;">It finds misconfigurations. Use it.</td></tr>
 			<tr><td style="padding: 0.15em 0.5em;">&#x2022; <code style="font-family: 'Fira Mono', monospace;">openclaw security</code></td><td style="padding: 0.15em 0.5em;">Audit security setup and config.</td></tr>
 		</table>
@@ -347,7 +346,7 @@
 	<div style="font-size: 0.55em; margin-top: 0.5em; padding: 0.4em 0.8em; background: #fdedec; border: 2px solid #c0392b; border-radius: 6px; display: inline-block;">
 		&#x26A0;&#xFE0F; <strong>Avoid ClawHub.</strong> 341 malicious skills found. 335 designed to steal macOS passwords. Cisco found skills exfiltrating data in Base64 chunks. There is no review gate.
 	</div>
-</section>
+	<p style="font-size: 0.45em; color: #888; margin-top: 0.4em;">&#x1F916; <em>"Danger, Will Robinson, danger."</em></p>
 </section>
 
 <!-- Slide 12: The Credential Paradox -->
@@ -489,22 +488,9 @@
 		<p>Agents are only useful if we can actually use them.</p>
 		<p style="margin-top: 0.3em;">The credential paradox is a hard stop for Duke workflows. The agent needs to authenticate. Authentication requires credentials. Credentials on a machine with <code>exec</code> are not secrets.</p>
 	</div>
-	<div style="margin: 0.5em auto; max-width: 70%; text-align: center;">
-		<img src="figures/kuali-loading.gif" style="max-height: 25vh; border: 1px solid #ccc; border-radius: 6px; box-shadow: none;">
-		<div style="font-size: 0.5em; color: #555; margin-top: 0.3em;">
-			<strong>25 Years of Progress</strong>
-			<table style="margin: 0.3em auto; font-size: 0.95em;">
-				<tr><td style="padding: 0.15em 0.5em; font-weight: bold;">2001</td><td style="padding: 0.15em 0.5em;">50ms to render a form with Perl CGI</td></tr>
-				<tr><td style="padding: 0.15em 0.5em; font-weight: bold;">2026</td><td style="padding: 0.15em 0.5em;">20s to boot a JavaScript runtime to render a form</td></tr>
-			</table>
-			<br>
-			<em>A task better suited for an agent with infinite patience.</em>
-		</div>
-	</div>
 </section>
 
 <!-- Container Topology (standalone) -->
-</section>
 </section>
 <section>
 <section data-transition="none">
@@ -577,7 +563,7 @@
 	<h3 style="font-family: 'Fira Mono', monospace;">Broker Flow</h3>
 	<div class="mermaid" style="font-size: 0.40em;">
 sequenceDiagram
-    participant UI as User (WebUI / Slack)
+    participant UI as User (WebUI / TUI)
     participant Main as Main Agent
     participant Duke as Duke Agent<br/>(network-jailed)
     participant Broker as Credential Broker<br/>(socket-only)
@@ -714,6 +700,36 @@ sequenceDiagram
 	<p style="font-size: 0.45em; margin-top: 0.3em;">Open ocean &rarr; <strong>keyhole</strong>. The chain requires all three to align in a 10-min window, restricted to duke.edu, with no way to phone home.</p>
 </section>
 
+<!-- Slide: 25 Years of Progress -->
+<section data-transition="none">
+	<div style="margin: 1em auto; max-width: 70%; text-align: center;">
+		<img src="figures/kuali-loading.gif" style="max-height: 30vh; border: 1px solid #ccc; border-radius: 6px; box-shadow: none;">
+		<div style="font-size: 0.55em; color: #555; margin-top: 0.5em;">
+			<strong>25 Years of Progress</strong>
+			<table style="margin: 0.3em auto; font-size: 0.95em;">
+				<tr><td style="padding: 0.15em 0.5em; font-weight: bold;">2001</td><td style="padding: 0.15em 0.5em;">50ms to render a form with Perl CGI</td></tr>
+				<tr><td style="padding: 0.15em 0.5em; font-weight: bold;">2026</td><td style="padding: 0.15em 0.5em;">20s to boot a JavaScript runtime to render a form</td></tr>
+			</table>
+			<br>
+			<em>A task better suited for an agent with infinite patience.</em>
+		</div>
+	</div>
+</section>
+
+<!-- Slide: Telegram Demo -->
+<section data-transition="none">
+	<div style="display: flex; gap: 1.5em; max-width: 95%; margin: 0.3em auto; align-items: flex-start;">
+		<!-- Left: Telegram screenshot -->
+		<div style="flex: 1; text-align: center;">
+			<img src="figures/telegram-chat.png" style="max-height: 55vh; border: 1px solid #ccc; border-radius: 6px; box-shadow: none;">
+		</div>
+		<!-- Right: Telegram thread (scrollable, auto-scrolls) -->
+		<div id="telegram-scroll" style="flex: 1; max-height: 55vh; overflow-y: auto; border: 1px solid #ccc; border-radius: 6px;">
+			<img src="figures/telegram-thread.png" style="width: 100%; display: block;">
+		</div>
+	</div>
+</section>
+
 <!-- Slide 17: My Agents -->
 <section>
 <section data-transition="none">
@@ -745,6 +761,11 @@ sequenceDiagram
 				<td style="padding: 0.2em 0.5em;">Claude Code</td>
 				<td style="padding: 0.2em 0.5em;">Project-specific SSH key. Codes, commits, pushes.</td>
 			</tr>
+			<tr>
+				<td style="padding: 0.2em 0.5em;"><strong>scholar</strong></td>
+				<td style="padding: 0.2em 0.5em;">CV &amp; publications</td>
+				<td style="padding: 0.2em 0.5em;">Keeps CV up to date with recent papers, seminars, etc. LaTeX/Overleaf integration.</td>
+			</tr>
 		</table>
 		<div style="margin-top: 0.5em;">
 			<strong>Channels:</strong>
@@ -757,7 +778,6 @@ sequenceDiagram
 
 <!-- Slide 17b: Cricky Demo -->
 <section data-transition="none" data-background-image="figures/cricky-demo.png" data-background-size="contain" data-background-color="#fff">
-	<h3 class="fragment fade-out" style="font-family: 'Fira Mono', monospace; background: rgba(0,0,0,0.7); color: #fff; display: inline-block; padding: 0.2em 0.6em; border-radius: 6px;">@cricky: FACS analysis in Slack</h3>
 </section>
 </section>
 
@@ -780,6 +800,27 @@ sequenceDiagram
 			});
 			Reveal.on('ready', () => mermaid.run({ querySelector: '.mermaid' }));
 			Reveal.on('slidechanged', () => mermaid.run({ querySelector: '.mermaid' }));
+
+			// Auto-scroll Telegram thread on click
+			let telegramScrollTimer = null;
+			document.addEventListener('click', () => {
+				const el = document.getElementById('telegram-scroll');
+				if (!el || !Reveal.getCurrentSlide().contains(el)) return;
+				if (telegramScrollTimer) { clearInterval(telegramScrollTimer); telegramScrollTimer = null; return; }
+				telegramScrollTimer = setInterval(() => {
+					el.scrollTop += 0.5;
+					if (el.scrollTop >= el.scrollHeight - el.clientHeight) {
+						clearInterval(telegramScrollTimer);
+						telegramScrollTimer = null;
+					}
+				}, 25);
+			});
+			Reveal.on('slidechanged', () => {
+				clearInterval(telegramScrollTimer);
+				telegramScrollTimer = null;
+				const el = document.getElementById('telegram-scroll');
+				if (el) el.scrollTop = 0;
+			});
 		</script>
 	</body>
 </html>
